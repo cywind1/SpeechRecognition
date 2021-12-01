@@ -1,0 +1,71 @@
+body, html {
+  margin: 0;
+}
+
+html {
+  height: 100%;
+  background-color:#A788B1;
+}
+
+body {
+  height: inherit;
+}
+
+h1, p {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h5 {
+  font-family: sans-serif;
+  text-align: left;
+}
+
+.container {
+  text-align: right;
+}
+
+#output {
+  background: #dadada;
+  padding: 2rem;
+  margin:auto;
+  width: 80vw;
+  height: 55vh;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+}
+
+button {
+  background-color: #543153;
+  color: white;
+  height:40px;
+  width:150px;
+}
+
+#note-textarea{
+  padding: 2rem 2rem;
+  margin:0 auto;
+  width: 77vw;
+  height: 30vh;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+}
+
+#recording-instructions {
+  background: #817387;
+  margin: 15px auto 60px;
+  color : #FFFFFF;
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#score {
+  background: #dadada;
+  padding: 2rem;
+  margin:auto;
+  width: 5vw;
+}
