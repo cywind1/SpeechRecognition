@@ -1,3 +1,8 @@
+var jsdom = require('jsdom');                                                                                                                                             
+$ = require('jquery')(new jsdom.JSDOM().window);   
+
+// will execute the if block if the window object does exist as a top level variable
+if (typeof window !== "undefined") {
 try {
 	var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 	// create a SpeechRecognition object
@@ -8,6 +13,7 @@ try {
 	$('.no-browser-support').show();
 	$('.output').hide();
   }
+}
 
   // $() = jQuery Selectors
   var noteTextarea = $('#note-textarea');
@@ -20,7 +26,7 @@ try {
   renderNotes(notes);
   
   /*-----------------------------
-		Voice Recognition 
+		Speech Recognition 
   ------------------------------*/
 
   // set the language to english
@@ -73,7 +79,7 @@ try {
 		Buttons and input 
   ------------------------------*/
   
-  // on() = attaches one or more event handlers for the selected elements and child elements
+  // on() = attaches one or more event handlers for the selected and child elements
   $('#start-record-btn').on('click', function(e) {
 
 	// .length() = not empty
@@ -189,3 +195,24 @@ try {
 	// removeItem() = wen passed a key name, will remove that key from the storage
 	localStorage.removeItem('note-' + dateTime); 
   }
+
+    /*-----------------------------
+		Save Data 
+  ------------------------------*/
+
+  // fs module = for reading and writing files
+  const fs = require('fs');
+
+  const saveData = (notes) => {
+		const finished = (error) => {
+			if(error){
+			  console.error(error)
+			  return;
+			}
+		}
+
+		const jsonData = JSON.stringify(notes)
+		fs.writeFile('result.json', jsonData, finished)
+  }
+
+  saveData(notes)
