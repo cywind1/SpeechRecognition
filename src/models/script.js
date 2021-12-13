@@ -1,5 +1,5 @@
-var jsdom = require('jsdom');                                                                                                                                             
-$ = require('jquery')(new jsdom.JSDOM().window);   
+// var jsdom = require('jsdom');                                                                                                                                             
+// $ = require('jquery')(new jsdom.JSDOM().window);   
 
 // will execute the if block if the window object does exist as a top level variable
 if (typeof window !== "undefined") {
