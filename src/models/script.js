@@ -43,16 +43,18 @@ try {
 	// event is a SpeechRecognitionEvent object, it holds all the lines we have captured so far
 	// event.resultIndex = read-only, returns the lowest index value result in the array that has actually changed 
 	var current = event.resultIndex;
+	console.log("current: " + current);
   
 	// event.results = read-only, returns an object representing all the speech recognition results for the current session
 	// [current] = returns an object representing all the speech recognition results for the current session
 	// .transcript = read-only, returns a string containing the transcript of the recognized word
 	var transcript = event.results[current][0].transcript;
-  
+	console.log("transcript: " + transcript);
 	// add the current transcript to the contents of our Note
 	noteContent += transcript;
 	// returns or sets the value attribute of the selected elements
 	noteTextarea.val(noteContent);
+	console.log("noteContent: " + noteContent);
   };
   
     // perform an action when the recognition starts
@@ -200,19 +202,19 @@ try {
 		Save Data 
   ------------------------------*/
 
-  // fs module = for reading and writing files
-  const fs = require('fs');
+//   // fs module = for reading and writing files
+//   const fs = require('fs');
 
-  const saveData = (notes) => {
-		const finished = (error) => {
-			if(error){
-			  console.error(error)
-			  return;
-			}
-		}
+//   const saveData = (notes) => {
+// 		const finished = (error) => {
+// 			if(error){
+// 			  console.error(error)
+// 			  return;
+// 			}
+// 		}
 
-		const jsonData = JSON.stringify(notes)
-		fs.writeFile('result.json', jsonData, finished)
-  }
+// 		const jsonData = JSON.stringify(notes)
+// 		fs.writeFile('result.json', jsonData, finished)
+//   }
 
-  saveData(notes)
+//   saveData(notes)
