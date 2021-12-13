@@ -1,12 +1,11 @@
-// find if the target word is in the given string (transcript)
+// check if the target word is in the given string (transcript)
 
-function countScore(transcript,target){
-let score = 0;
-if (transcript.includes(target) {
-	score += 20
-} 
-return score;
-}
+    function countScore(transcript,target){
+    let score = 0;
+    if (transcript.includes(target))
+	    score += 20;
+    return score;
+    }
 
 // count the number of occurrence of a target word in the given string (transcript)
      
